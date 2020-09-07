@@ -1,7 +1,18 @@
 import React from 'react'
-
-import { Header } from './Header'
+import {
+  Header as AppHeader,
+  Title,
+  Links,
+} from './componets'
 
 export default () => {
-  return <Header />
+  return (
+    <AppHeader>
+      <Title> Calculator app</Title>
+      <div className="header-links">
+        <Links to="/">Home</Links>
+        <Links to="/settigns">Settigns</Links>
+      </div>
+    </AppHeader>
+  )
 }
