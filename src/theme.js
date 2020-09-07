@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
 
-const font = 'sans-serif'
+const font = 'Helvetica'
 
 // Color palette
 const black = '#000000'

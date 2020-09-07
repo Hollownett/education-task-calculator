@@ -5,7 +5,6 @@ export const Card = styled.div`
   height: 100%;
 
   background-color: ${({ theme }) => theme.colors.white};
-
   border-radius: 32px;
 
   display: flex;
