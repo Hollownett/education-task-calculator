@@ -1,16 +1,20 @@
 import React from 'react'
 
-import { History } from './components'
+import {
+  HistoryList,
+  HistoryTitle,
+  HistoryContainer,
+} from './components'
 
-export default () => {
-    return (
-        <History>
-            <ul>
-                1 elem
-            </ul>
-            <ul>
-                2 elem
-            </ul>
-        </History>
-    )
+export default ({ history }) => {
+  return (
+    <HistoryContainer>
+      <HistoryTitle>History</HistoryTitle>
+      <HistoryList>
+        {history.map((expr, index) => (
+          <ul key={index}>{expr}</ul>
+        ))}
+      </HistoryList>
+    </HistoryContainer>
+  )
 }
