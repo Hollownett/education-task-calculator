@@ -2,10 +2,6 @@ import React from 'react'
 
 import { Display } from './components'
 
-export default () => {
-    return (
-        <Display>
-            42+42
-        </Display>
-    )
+export default ({ expr }) => {
+  return <Display>{expr === '' ? 0 : expr}</Display>
 }

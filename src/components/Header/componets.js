@@ -19,7 +19,7 @@ export const Links = styled(Link)`
   font-weight: normal;
   margin: 10px;
   letter-spacing: 0px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
   opacity: 1;
 `
 
@@ -27,6 +27,6 @@ export const Title = styled.h3`
   font-size: 32px;
   font-weight: normal;
   letter-spacing: 0px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
   opacity: 1;
 `
