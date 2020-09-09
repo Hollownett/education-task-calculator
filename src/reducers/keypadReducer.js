@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 const {
   CALCULATE,
   SET_EXPRESSION,
@@ -39,7 +40,7 @@ function keypadReducer(
         expr: action.payload.expr,
       }
     case SET_EXPRESSION:
-      let expression = setExpression(state.expr, action)
+      const expression = setExpression(state.expr, action)
       if (!state.expr) {
         return {
           ...state,
