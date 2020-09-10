@@ -10,19 +10,20 @@ import {
   Button,
   SettignsContainer,
 } from './components'
-import { changeTheme } from "@/actions"
+import { changeTheme } from '@/actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearHistory } from '@/actions/index'
 
 export default () => {
   const { currentTheme } = useSelector(state => state.theme)
-  const [selectedTheme, setSelectedTheme] = useState(currentTheme)
+  const [selectedTheme, setSelectedTheme] = useState(
+    currentTheme,
+  )
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(changeTheme(selectedTheme))
-    return () => {
-    }
+    return () => {}
   }, [selectedTheme])
 
   const themes = [
@@ -45,7 +46,7 @@ export default () => {
       <Card>
         <Header />
         <SettignsContainer>
-          <Title>Settings</Title>
+          <Title>Settigns</Title>
           <p>Switch theme</p>
           <div
             style={{

@@ -13,6 +13,7 @@ export const Card = styled.div`
   box-shadow: ${({ theme }) => theme.boxShadows[0]};
 `
 export const Title = styled.h2`
+  color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fontSizes[10]}px;
   margin-bottom: ${({ theme }) => theme.spaces[4]}px;
 `
