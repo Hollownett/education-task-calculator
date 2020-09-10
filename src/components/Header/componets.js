@@ -4,18 +4,21 @@ import { Link } from 'react-router-dom'
 export const Header = styled.div`
   width: 100%;
   height: 120px;
-  margin: 10px;
-  background: #434343 0% 0% no-repeat padding-box;
-  border: 1px solid #707070;
+  margin-bottom: 10px;
+  background: 0% 0% no-repeat padding-box padding-box
+    ${({ theme }) => theme.colors.darkGrey};
+  border: 1px solid rgb(112, 112, 112);
   opacity: 1;
   display: flex;
+  -webkit-box-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
   align-items: center;
-  padding: 0.5rem;
+  padding: 1.5rem;
 `
 
 export const Links = styled(Link)`
-  font-size: 32px;
+  font-size: ${({ theme }) => theme.fontSizes[5]}px;
   font-weight: normal;
   margin: 10px;
   letter-spacing: 0px;
@@ -24,7 +27,7 @@ export const Links = styled(Link)`
 `
 
 export const Title = styled.h3`
-  font-size: 32px;
+  font-size: ${({ theme }) => theme.fontSizes[5]}px;
   font-weight: normal;
   letter-spacing: 0px;
   color: ${({ theme }) => theme.colors.white};

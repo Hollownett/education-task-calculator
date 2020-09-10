@@ -5,6 +5,7 @@ const {
   ADD_TO_HISTORY,
   CLEAR,
   CLEAR_ELEMENT,
+  CLEAR_HISTORY,
 } = require('@/constants')
 
 function setExpression(expression, action) {
@@ -55,12 +56,17 @@ function keypadReducer(
     case CLEAR:
       return {
         ...state,
-        expr: action.payload.expr
+        expr: action.payload.expr,
       }
     case CLEAR_ELEMENT:
       return {
         ...state,
-        expr: action.payload.expr
+        expr: state.expr.slice(0, state.expr.length - 1),
+      }
+    case CLEAR_HISTORY:
+      return {
+        ...state,
+        history: state.history.splice(),
       }
     default:
       return state
@@ -68,4 +74,3 @@ function keypadReducer(
 }
 
 export { keypadReducer }
-
