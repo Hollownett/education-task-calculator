@@ -12,7 +12,7 @@ export default ({ history }) => {
       <HistoryTitle>History</HistoryTitle>
       <HistoryList>
         {history.map((expr, index) => (
-          <ul key={index}>{expr}</ul>
+          <li key={index}>{expr}</li>
         ))}
       </HistoryList>
     </HistoryContainer>

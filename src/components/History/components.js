@@ -7,8 +7,9 @@ list-style-type: none;
 overflow-y: scroll;
 color: ${({ theme }) => theme.colors.black}
 font-size: ${({ theme }) => theme.fontSizes[5]}px;
-ul{
+li{
     font-size: ${({ theme }) => theme.fontSizes[5]}px;
+    color: ${({ theme }) => theme.colors.black}
 }
 
 /* Scrollbar styles */

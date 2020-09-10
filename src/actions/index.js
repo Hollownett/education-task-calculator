@@ -6,6 +6,7 @@ import {
     CLEAR,
     CLEAR_ELEMENT,
     CLEAR_HISTORY,
+    CHANGE_THEME
 } from '@/constants/actions'
 
 const calculate = expr => async (dispatch, getState) => {
@@ -74,10 +75,24 @@ const clearHistory = () => (dispatch, getState) => {
     }
 }
 
+const changeTheme = (selectedTheme) => (dispatch) => {
+    try {
+        dispatch({
+            type: CHANGE_THEME,
+            payload: {
+                theme: selectedTheme
+            }
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export {
     calculate,
     setExpression,
     clearExpression,
     clearElement,
     clearHistory,
+    changeTheme
 }

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 export const Header = styled.div`
+  color:  ${({ theme }) => theme.colors.black};
   width: 100%;
   height: 120px;
   margin-bottom: 10px;

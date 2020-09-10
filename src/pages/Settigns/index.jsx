@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { PageLayout } from '@/layouts'
 import Header from '@/components/Header'
@@ -10,14 +10,21 @@ import {
   Button,
   SettignsContainer,
 } from './components'
-import { useDispatch } from 'react-redux'
+import { changeTheme } from "@/actions"
+import { useDispatch, useSelector } from 'react-redux'
 import { clearHistory } from '@/actions/index'
 
 export default () => {
-  const [selectedTheme, setSelectedTheme] = useState(
-    'light',
-  )
+  const { currentTheme } = useSelector(state => state.theme)
+  const [selectedTheme, setSelectedTheme] = useState(currentTheme)
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(changeTheme(selectedTheme))
+    return () => {
+    }
+  }, [selectedTheme])
+
   const themes = [
     {
       value: 'light',
