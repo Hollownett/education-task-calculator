@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const HistoryList = styled.ul`
-position: sticky; 
-height: 45rem;
+position: static; 
+height: 100%;
 list-style-type: none;
 overflow-y: scroll;
 color: ${({ theme }) => theme.colors.black}
@@ -29,6 +29,6 @@ export const HistoryTitle = styled.p`
 `
 export const HistoryContainer = styled.div`
   width: 20rem;
-  height: 48rem;
+  height: 100%;
   padding-left: 0.5rem;
 `

@@ -14,8 +14,19 @@ export const Button = styled.button`
   margin-right: 1.5rem;
 `
 export const KeypadContainer = styled.div`
+  position: static;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 120px;
   grid-row-gap: 20px;
+  /* laptop friendly */
+  @media (max-width: 1440px){
+    grid-column-gap: 65px;
+    grid-row-gap: 6px;
+    Button{
+      width: 5.8rem;
+      height: 5.8rem;
+      font-size: ${({ theme }) => theme.fontSizes[6]}px;
+    }
+  }
 `

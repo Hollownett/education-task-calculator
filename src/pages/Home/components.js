@@ -16,6 +16,7 @@ export const Card = styled.div`
 export const Heading = styled.h3``
 
 export const CalcukatorContainer = styled.div`
+  height: 70%;
   display: flex;
   flex-direction: row;
   align-content: flex-start;
