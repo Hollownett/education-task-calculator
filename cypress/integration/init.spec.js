@@ -118,7 +118,7 @@ describe('Home page', () => {
       .contains('C')
       .click({ force: true })
       .get('.components__Display-sc-17khll6-0')
-      .contains('0')
+      .should('have.value', '')
   })
   it('clear element', () => {
     cy.get('.components__Button-mu052l-0')

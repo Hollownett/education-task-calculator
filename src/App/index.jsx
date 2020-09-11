@@ -4,6 +4,8 @@ import { Switch, Route } from 'react-router-dom'
 import {
   HOME_PAGE_ROUTE,
   SETTIGNS_PAGE_ROUTE,
+  HOME_PAGE_ROUTE_CLASSES,
+  SETTIGNS_PAGE_ROUTE_CLASSES,
 } from '@/constants'
 
 import Loader from '@/components/Loader'
@@ -13,6 +15,12 @@ import { ThemeProvider } from 'styled-components'
 
 const HomePage = lazy(() => import('@/pages/Home'))
 const SettignsPage = lazy(() => import('@/pages/Settigns'))
+const HomePageClass = lazy(() =>
+  import('@/pages/ClassPages/Home'),
+)
+const SettignsPageClass = lazy(() =>
+  import('@/pages/ClassPages/Settigns'),
+)
 
 export default () => {
   const { currentTheme } = useSelector(state => state.theme)
@@ -41,6 +49,15 @@ export default () => {
           <Route
             path={SETTIGNS_PAGE_ROUTE}
             component={SettignsPage}
+          />
+          <Route
+            exact
+            path={HOME_PAGE_ROUTE_CLASSES}
+            component={HomePageClass}
+          />
+          <Route
+            path={SETTIGNS_PAGE_ROUTE_CLASSES}
+            component={SettignsPageClass}
           />
         </Switch>
       </ThemeProvider>

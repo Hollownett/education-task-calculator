@@ -1,8 +1,11 @@
 import React from 'react'
 
-import { Display } from './components'
+import { Display, DisplayContainer } from './components'
 
 export default ({ expr }) => {
-  return <Display>{expr === '' ? 0 : expr}</Display>
+  return (
+    <DisplayContainer>
+      <Display>{expr}</Display>
+    </DisplayContainer>
+  )
 }
-

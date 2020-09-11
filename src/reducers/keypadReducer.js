@@ -33,7 +33,7 @@ function setExpression(expression, action) {
 }
 
 function keypadReducer(
-  state = { expr: '', history: [] },
+  state = { expr: ' ', history: [] },
   action,
 ) {
   switch (action.type) {

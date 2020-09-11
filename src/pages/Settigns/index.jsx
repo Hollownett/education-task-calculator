@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 import { PageLayout } from '@/layouts'
 import Header from '@/components/Header'
@@ -15,31 +15,24 @@ import { changeTheme } from '@/actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearHistory } from '@/actions/index'
 
+const themes = [
+  {
+    value: 'light',
+    label: 'Light theme',
+  },
+  {
+    value: 'dark',
+    label: 'Dark theme',
+  },
+]
+
 export default () => {
   const { currentTheme } = useSelector(state => state.theme)
-  const [selectedTheme, setSelectedTheme] = useState(
-    currentTheme,
-  )
+
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(changeTheme(selectedTheme))
-    return () => {}
-  }, [selectedTheme])
-
-  const themes = [
-    {
-      value: 'light',
-      label: 'Light theme',
-    },
-    {
-      value: 'dark',
-      label: 'Dark theme',
-    },
-  ]
-
   const handleChange = event => {
-    setSelectedTheme(event.target.value)
+    dispatch(changeTheme(event.target.value))
   }
 
   return (
@@ -55,7 +48,7 @@ export default () => {
             }}>
             <ThemeSelector
               onChange={handleChange}
-              value={selectedTheme}>
+              value={currentTheme}>
               {themes.map(item => (
                 <option key={item.value} value={item.value}>
                   {item.label}
