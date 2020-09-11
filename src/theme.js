@@ -68,6 +68,7 @@ export const lightTheme = {
   spaces: [0, 4, 8, 16, 32, 64, 128],
   fontSizes: [12, 14, 16, 20, 24, 32, 40, 56, 72, 80, 64],
   colors: {
+    white: white,
     primary: white,
     secondary: black,
     grey: grey,
@@ -83,6 +84,7 @@ export const darkTheme = {
   spaces: [0, 4, 8, 16, 32, 64, 128],
   fontSizes: [12, 14, 16, 20, 24, 32, 40, 56, 72, 80, 64],
   colors: {
+    white: white,
     primary: black,
     secondary: white,
     grey: darkGrey,

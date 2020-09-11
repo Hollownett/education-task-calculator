@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { PageLayout } from '@/layouts'
-import Header from '@/components/Header'
+import Header from '@/components/FunctionalComponets/Header'
 
 import {
   Card,

@@ -6,7 +6,7 @@ import {
   Links,
 } from './componets'
 
-export default () => {
+function Header() {
   return (
     <AppHeader>
       <Title> Calculator app</Title>
@@ -17,3 +17,5 @@ export default () => {
     </AppHeader>
   )
 }
+
+export default Header

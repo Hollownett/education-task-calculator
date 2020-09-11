@@ -5,7 +5,7 @@ import {
   DisplayContainer,
 } from './components'
 
-export default class Display extends React.Component {
+class Display extends React.Component {
   render() {
     return (
       <DisplayContainer>
@@ -16,3 +16,5 @@ export default class Display extends React.Component {
     )
   }
 }
+
+export default Display

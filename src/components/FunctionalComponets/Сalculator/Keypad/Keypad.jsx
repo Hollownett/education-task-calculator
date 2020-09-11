@@ -3,7 +3,7 @@ import React from 'react'
 import { Button, KeypadContainer } from './components'
 import { keypad } from '@/constants/keypad'
 
-export default ({ handleClick }) => {
+function Keypad({ handleClick }) {
   return (
     <KeypadContainer>
       {keypad.map((key, index) => (
@@ -16,3 +16,4 @@ export default ({ handleClick }) => {
     </KeypadContainer>
   )
 }
+export default Keypad

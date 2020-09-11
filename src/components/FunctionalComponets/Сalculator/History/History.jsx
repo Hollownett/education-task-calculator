@@ -6,7 +6,7 @@ import {
   HistoryContainer,
 } from './components'
 
-export default ({ history }) => {
+function History({ history }) {
   return (
     <HistoryContainer>
       <HistoryTitle>History</HistoryTitle>
@@ -18,3 +18,5 @@ export default ({ history }) => {
     </HistoryContainer>
   )
 }
+
+export default History

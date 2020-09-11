@@ -8,13 +8,17 @@ import {
   SETTIGNS_PAGE_ROUTE_CLASSES,
 } from '@/constants'
 
-import Loader from '@/components/Loader'
+import Loader from '@/components/FunctionalComponets/Loader'
 import { useSelector } from 'react-redux'
 import { lightTheme, darkTheme } from '@/theme'
 import { ThemeProvider } from 'styled-components'
 
-const HomePage = lazy(() => import('@/pages/Home'))
-const SettignsPage = lazy(() => import('@/pages/Settigns'))
+const HomePage = lazy(() =>
+  import('@/pages/FunctionalPages/Home'),
+)
+const SettignsPage = lazy(() =>
+  import('@/pages/FunctionalPages/Settigns'),
+)
 const HomePageClass = lazy(() =>
   import('@/pages/ClassPages/Home'),
 )

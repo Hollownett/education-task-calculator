@@ -40,6 +40,8 @@ export const ThemeSelector = styled.select`
   text-align: left;
   padding: ${({ theme }) => theme.spaces[2]}px;
   font-size: ${({ theme }) => theme.fontSizes[3]}px;
+  background-color: ${({ theme }) => theme.colors.white};
+  opacity: 1;
 `
 export const SettignsContainer = styled.div`
   margin-left: ${({ theme }) => theme.spaces[4]}px;

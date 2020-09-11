@@ -6,7 +6,7 @@ import {
   HistoryContainer,
 } from './components'
 
-export default class History extends React.Component {
+class History extends React.Component {
   render() {
     return (
       <HistoryContainer>
@@ -20,3 +20,5 @@ export default class History extends React.Component {
     )
   }
 }
+
+export default History

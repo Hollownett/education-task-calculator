@@ -3,7 +3,7 @@ import React from 'react'
 import { Button, KeypadContainer } from './components'
 import { keypad } from '@/constants/keypad'
 
-export default class KeyPad extends React.Component {
+class KeyPad extends React.Component {
   render() {
     return (
       <KeypadContainer>
@@ -18,3 +18,5 @@ export default class KeyPad extends React.Component {
     )
   }
 }
+
+export default KeyPad
