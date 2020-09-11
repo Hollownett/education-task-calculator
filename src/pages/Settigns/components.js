@@ -4,7 +4,7 @@ export const Card = styled.div`
   width: 100%;
   height: 100%;
 
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.primary};
 
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@ export const Card = styled.div`
   box-shadow: ${({ theme }) => theme.boxShadows[0]};
 `
 export const Title = styled.h2`
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.secondary};
   font-size: ${({ theme }) => theme.fontSizes[10]}px;
   margin-bottom: ${({ theme }) => theme.spaces[4]}px;
 `
@@ -27,7 +27,7 @@ export const Button = styled.button`
   margin-top: ${({ theme }) => theme.spaces[4]}px;
   font-size: ${({ theme }) => theme.fontSizes[3]}px;
   text-align: left;
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.secondary};
 `
 
 export const ThemeSelector = styled.select`

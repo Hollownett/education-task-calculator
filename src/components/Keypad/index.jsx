@@ -6,7 +6,9 @@ export default ({ handleClick }) => {
   return (
     <KeypadContainer>
       {keypad.map((key, index) => (
-        <Button onClick={() => handleClick(key)}>
+        <Button
+          key={index}
+          onClick={() => handleClick(key)}>
           {key}
         </Button>
       ))}

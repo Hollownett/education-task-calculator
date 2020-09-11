@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 export const Header = styled.div`
-  color:  ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.secondary};
   width: 100%;
   height: 120px;
   margin-bottom: 10px;
@@ -23,7 +23,7 @@ export const Links = styled(Link)`
   font-weight: normal;
   margin: 10px;
   letter-spacing: 0px;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.primary};
   opacity: 1;
 `
 
@@ -31,6 +31,6 @@ export const Title = styled.h3`
   font-size: ${({ theme }) => theme.fontSizes[5]}px;
   font-weight: normal;
   letter-spacing: 0px;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.primary};
   opacity: 1;
 `

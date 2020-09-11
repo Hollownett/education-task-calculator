@@ -58,5 +58,34 @@ export default {
     grey,
     darkGrey,
   },
+}
 
+export const lightTheme = {
+  above: above,
+  below: below,
+  boxShadows: boxShadows,
+  font: font,
+  spaces: [0, 4, 8, 16, 32, 64, 128],
+  fontSizes: [12, 14, 16, 20, 24, 32, 40, 56, 72, 80, 64],
+  colors: {
+    primary: white,
+    secondary: black,
+    grey: grey,
+    darkGrey: darkGrey,
+  },
+}
+
+export const darkTheme = {
+  above: above,
+  below: below,
+  boxShadows: boxShadows,
+  font: font,
+  spaces: [0, 4, 8, 16, 32, 64, 128],
+  fontSizes: [12, 14, 16, 20, 24, 32, 40, 56, 72, 80, 64],
+  colors: {
+    primary: black,
+    secondary: white,
+    grey: darkGrey,
+    darkGrey: grey,
+  },
 }
