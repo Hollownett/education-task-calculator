@@ -24,6 +24,7 @@ export const Button = styled.button`
   border: 2px solid ${({ theme }) => theme.colors.darkGrey};
   width: 250px;
   height: 50px;
+  padding: ${({ theme }) => theme.spaces[2]}px;
   margin-top: ${({ theme }) => theme.spaces[4]}px;
   font-size: ${({ theme }) => theme.fontSizes[3]}px;
   text-align: left;
