@@ -10,10 +10,11 @@ describe('Home page', () => {
   it('it check loader', () => {
     cy.get('svg').should('be.visible')
   })
+})
 
-  it('it check welcome title', () => {
-    cy.get('#welcome')
-      .should('be.visible')
-      .contains('Welcome!')
+describe('Settigns page', () => {
+  it('successfuly loads', () => {
+    cy.visit('/settings')
   })
+
 })
