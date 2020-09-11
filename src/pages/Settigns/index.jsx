@@ -10,6 +10,7 @@ import {
   Button,
   SettignsContainer,
 } from './components'
+
 import { changeTheme } from '@/actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearHistory } from '@/actions/index'
