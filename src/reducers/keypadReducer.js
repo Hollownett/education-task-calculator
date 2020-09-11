@@ -32,10 +32,12 @@ function setExpression(expression, action) {
   }
 }
 
-function keypadReducer(
-  state = { expr: ' ', history: [] },
-  action,
-) {
+const INITIAL_STATE = {
+  expr: ' ',
+  history: [],
+}
+
+function keypadReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case CALCULATE:
       return {

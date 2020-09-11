@@ -1,9 +1,10 @@
 const { CHANGE_THEME } = require('@/constants')
 
-function themeReducer(
-  state = { currentTheme: 'light' },
-  action,
-) {
+const INITIAL_STATE = {
+  currentTheme: 'light',
+}
+
+function themeReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case CHANGE_THEME:
       return {
