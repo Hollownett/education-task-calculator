@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Display = styled.p`
-  color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.black};
   border-color: ${({ theme }) => theme.colors.secondary};
   text-align: right;
   font-size: ${({ theme }) => theme.fontSizes[10]}px;

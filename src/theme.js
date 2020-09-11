@@ -70,24 +70,36 @@ export const lightTheme = {
   colors: {
     white: white,
     primary: white,
-    secondary: black,
+    secondary: secondary,
+    secondaryLight: secondaryLight,
     grey: grey,
     darkGrey: darkGrey,
+    black: black,
   },
 }
 
 export const darkTheme = {
-  above: above,
-  below: below,
-  boxShadows: boxShadows,
-  font: font,
-  spaces: [0, 4, 8, 16, 32, 64, 128],
-  fontSizes: [12, 14, 16, 20, 24, 32, 40, 56, 72, 80, 64],
+  ...lightTheme,
   colors: {
     white: white,
+    black: white,
     primary: black,
-    secondary: white,
+    secondary: secondaryLight,
+    secondaryLight: secondary,
     grey: darkGrey,
     darkGrey: grey,
+  },
+}
+
+export const coloredTheme = {
+  ...lightTheme,
+  colors: {
+    white: white,
+    primary: secondary,
+    secondary: secondary,
+    secondaryLight: secondaryLight,
+    grey: grey,
+    darkGrey: darkGrey,
+    black: black,
   },
 }

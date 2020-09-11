@@ -24,6 +24,10 @@ const themes = [
     value: 'dark',
     label: 'Dark theme',
   },
+  {
+    value: 'colored',
+    label: 'Colored theme',
+  },
 ]
 
 export default () => {

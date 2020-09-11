@@ -23,6 +23,10 @@ const themes = [
     value: 'dark',
     label: 'Dark theme',
   },
+  {
+    value: 'colored',
+    label: 'Colored theme',
+  },
 ]
 
 class Settigns extends React.Component {

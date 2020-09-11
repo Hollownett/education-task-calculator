@@ -11,8 +11,18 @@ function Header() {
     <AppHeader>
       <Title> Calculator app</Title>
       <div className="header-links">
-        <Links to="/">Home</Links>
-        <Links to="/settigns">Settigns</Links>
+        <Links
+          exact
+          activeStyle={{ color: 'white' }}
+          to="/">
+          Home
+        </Links>
+        <Links
+          exact
+          activeStyle={{ color: 'white' }}
+          to="/settigns">
+          Settigns
+        </Links>
       </div>
     </AppHeader>
   )

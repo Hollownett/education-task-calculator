@@ -1,36 +1,14 @@
 /* eslint-disable no-case-declarations */
-const {
+import {
   CALCULATE,
   SET_EXPRESSION,
   ADD_TO_HISTORY,
   CLEAR,
   CLEAR_ELEMENT,
   CLEAR_HISTORY,
-} = require('@/constants')
+} from '@/constants'
 
-function setExpression(expression, action) {
-  if (
-    /[\d]*[-+*/.]$/.exec(expression) &&
-    /[-+*/.]/.exec(action.payload.expr)
-  ) {
-    console.log('b', expression)
-    expression = expression.slice(0, expression.length - 1)
-    console.log('a', expression)
-  }
-
-  switch (action.type) {
-    case SET_EXPRESSION:
-      if (
-        ['+', '/', '*'].includes(action.payload.expr) &&
-        !expression
-      ) {
-        return `${action.payload.expr}`
-      }
-      return `${expression + action.payload.expr}`
-    default:
-      return expression
-  }
-}
+import { setExpression } from '@/helpers'
 
 const INITIAL_STATE = {
   expr: ' ',

@@ -10,7 +10,11 @@ import {
 
 import Loader from '@/components/FunctionalComponets/Loader'
 import { useSelector } from 'react-redux'
-import { lightTheme, darkTheme } from '@/theme'
+import {
+  lightTheme,
+  darkTheme,
+  coloredTheme,
+} from '@/theme'
 import { ThemeProvider } from 'styled-components'
 
 const HomePage = lazy(() =>
@@ -35,6 +39,8 @@ export default () => {
         return lightTheme
       case 'dark':
         return darkTheme
+      case 'colored':
+        return coloredTheme
       default:
         return lightTheme
     }
