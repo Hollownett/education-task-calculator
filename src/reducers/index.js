@@ -5,5 +5,5 @@ import { keypadReducer } from './keypadReducer'
 
 export const rootReducer = combineReducers({
   calculator: keypadReducer,
-  theme: themeReducer
+  theme: themeReducer,
 })

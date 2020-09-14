@@ -5,11 +5,11 @@ position: static;
 height: 100%;
 list-style-type: none;
 overflow-y: scroll;
-color: ${({ theme }) => theme.colors.black}
+color: ${({ theme }) => theme.colors.secondary}
 font-size: ${({ theme }) => theme.fontSizes[5]}px;
 li{
     font-size: ${({ theme }) => theme.fontSizes[5]}px;
-    color: ${({ theme }) => theme.colors.black}
+    color: ${({ theme }) => theme.colors.secondary}
 }
 
 /* Scrollbar styles */
@@ -25,7 +25,7 @@ li{
 `
 export const HistoryTitle = styled.p`
   text-align: center;
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.secondary};
   font-size: ${({ theme }) => theme.fontSizes[6]}px;
 `
 export const HistoryContainer = styled.div`

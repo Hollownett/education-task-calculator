@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useState } from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import {
@@ -7,10 +7,8 @@ import {
 } from '@/constants'
 
 import Loader from '@/components/Loader'
-import { useSelector, useDispatch } from 'react-redux'
-import { changeTheme } from '@/actions'
-import darkTheme from '@/darkTheme'
-import theme from '@/theme'
+import { useSelector } from 'react-redux'
+import { lightTheme, darkTheme } from '@/theme'
 import { ThemeProvider } from 'styled-components'
 
 const HomePage = lazy(() => import('@/pages/Home'))
@@ -19,19 +17,21 @@ const SettignsPage = lazy(() => import('@/pages/Settigns'))
 export default () => {
   const { currentTheme } = useSelector(state => state.theme)
 
-  const handleThemeChange = (selectedTheme) => {
+  const handleThemeChange = selectedTheme => {
     switch (selectedTheme) {
-      case "light":
-        return theme
-      case "dark":
+      case 'light':
+        return lightTheme
+      case 'dark':
         return darkTheme
-      default: return theme
+      default:
+        return lightTheme
     }
   }
 
   return (
     <Suspense fallback={<Loader />}>
-      <ThemeProvider theme={handleThemeChange(currentTheme)}>
+      <ThemeProvider
+        theme={handleThemeChange(currentTheme)}>
         <Switch>
           <Route
             exact
@@ -44,8 +44,6 @@ export default () => {
           />
         </Switch>
       </ThemeProvider>
-
-
     </Suspense>
   )
 }
