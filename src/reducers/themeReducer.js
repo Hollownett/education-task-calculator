@@ -1,9 +1,11 @@
 const { CHANGE_THEME } = require('@/constants')
 
-function themeReducer(
-  state = { currentTheme: 'light' },
-  action,
-) {
+const theme = sessionStorage.getItem("theme")
+const INITIAL_STATE = {
+  currentTheme: theme ? theme : "light",
+}
+
+function themeReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case CHANGE_THEME:
       return {

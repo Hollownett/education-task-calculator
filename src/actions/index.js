@@ -19,6 +19,8 @@ const calculate = expr => async (dispatch, getState) => {
         payload: { expr: expr },
       })
     }
+    const state = getState(state)
+    sessionStorage.setItem("history", JSON.stringify(state.calculator.history))
     dispatch({
       type: CALCULATE,
       payload: {
@@ -32,12 +34,15 @@ const calculate = expr => async (dispatch, getState) => {
 
 const setExpression = key => async (dispatch, getState) => {
   try {
-    dispatch({
-      type: SET_EXPRESSION,
-      payload: {
-        expr: key,
-      },
-    })
+    const state = getState(state)
+    if (state.calculator.expr.length < 20) {
+      dispatch({
+        type: SET_EXPRESSION,
+        payload: {
+          expr: key,
+        },
+      })
+    }
   } catch (error) {
     console.log(error)
   }
@@ -74,6 +79,7 @@ const clearHistory = () => (dispatch, getState) => {
     dispatch({
       type: CLEAR_HISTORY,
     })
+    sessionStorage.removeItem("history")
   } catch (error) {
     console.log(error)
   }
@@ -87,6 +93,7 @@ const changeTheme = selectedTheme => dispatch => {
         theme: selectedTheme,
       },
     })
+    sessionStorage.setItem("theme", selectedTheme)
   } catch (error) {
     console.log(error)
   }
