@@ -39,6 +39,10 @@ export default () => {
     dispatch(changeTheme(event.target.value))
   }
 
+  const deleteAllHistory = () => {
+    dispatch(clearHistory())
+  }
+
   return (
     <PageLayout>
       <Card>
@@ -60,7 +64,7 @@ export default () => {
               ))}
             </ThemeSelector>
           </div>
-          <Button onClick={() => dispatch(clearHistory())}>
+          <Button onClick={deleteAllHistory}>
             CLEAR ALL HISTORY
           </Button>
         </SettignsContainer>

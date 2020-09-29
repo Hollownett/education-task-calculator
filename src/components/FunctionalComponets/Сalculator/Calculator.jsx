@@ -7,8 +7,8 @@ import Histrory from './History'
 import { useDispatch, useSelector } from 'react-redux'
 
 import {
-  CalcukatorContainer,
-  ControlPanelConteiner,
+  CalculatorContainer,
+  ControlPanelContainer,
   Line,
 } from './components'
 
@@ -38,15 +38,15 @@ function Calculator() {
   }
 
   return (
-    <CalcukatorContainer>
-      <ControlPanelConteiner>
+    <CalculatorContainer>
+      <ControlPanelContainer>
         <Display expr={expr} />
         <Line horizontal />
         <Keypad handleClick={handleClick} />
-      </ControlPanelConteiner>
+      </ControlPanelContainer>
       <Line vertical />
       <Histrory history={history} />
-    </CalcukatorContainer>
+    </CalculatorContainer>
   )
 }
 

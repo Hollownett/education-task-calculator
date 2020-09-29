@@ -1,5 +1,7 @@
 /* eslint-disable comma-dangle */
 // @todo: add some actions
+import { evaluate } from 'mathjs'
+
 import {
   CALCULATE,
   SET_EXPRESSION,
@@ -12,7 +14,7 @@ import {
 
 const calculate = expr => async (dispatch, getState) => {
   try {
-    const answer = eval(expr)
+    const answer = evaluate(expr)
     if (expr.search(/[-+*/.]/) !== -1) {
       dispatch({
         type: ADD_TO_HISTORY,
@@ -20,7 +22,10 @@ const calculate = expr => async (dispatch, getState) => {
       })
     }
     const state = getState(state)
-    sessionStorage.setItem("history", JSON.stringify(state.calculator.history))
+    sessionStorage.setItem(
+      'history',
+      JSON.stringify(state.calculator.history),
+    )
     dispatch({
       type: CALCULATE,
       payload: {
@@ -48,52 +53,41 @@ const setExpression = key => async (dispatch, getState) => {
   }
 }
 
-const clearExpression = () => async (
-  dispatch,
-  getState,
-) => {
-  try {
-    dispatch({
-      type: CLEAR,
-      payload: {
-        expr: '',
-      },
-    })
-  } catch (error) {
-    console.log(error)
+const clearExpression = () => {
+  return {
+    type: CLEAR,
+    payload: {
+      expr: '',
+    },
   }
 }
 
-const clearElement = () => (dispatch, getState) => {
-  try {
-    dispatch({
-      type: CLEAR_ELEMENT,
-    })
-  } catch (error) {
-    console.log(error)
+const clearElement = () => {
+  return {
+    type: CLEAR_ELEMENT,
   }
 }
 
-const clearHistory = () => (dispatch, getState) => {
+const clearHistory = () => {
   try {
-    dispatch({
+    sessionStorage.removeItem('history')
+    return {
       type: CLEAR_HISTORY,
-    })
-    sessionStorage.removeItem("history")
+    }
   } catch (error) {
     console.log(error)
   }
 }
 
-const changeTheme = selectedTheme => dispatch => {
+const changeTheme = selectedTheme => {
   try {
-    dispatch({
+    sessionStorage.setItem('theme', selectedTheme)
+    return {
       type: CHANGE_THEME,
       payload: {
         theme: selectedTheme,
       },
-    })
-    sessionStorage.setItem("theme", selectedTheme)
+    }
   } catch (error) {
     console.log(error)
   }

@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
-export const CalcukatorContainer = styled.div`
+export const CalculatorContainer = styled.div`
   height: 70%;
   display: flex;
   flex-direction: row;
   align-content: flex-start;
 `
 
-export const ControlPanelConteiner = styled.div`
+export const ControlPanelContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-content: flex-end;

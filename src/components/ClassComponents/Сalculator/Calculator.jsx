@@ -7,8 +7,8 @@ import Histrory from './History'
 import Display from './Display'
 
 import {
-  CalcukatorContainer,
-  ControlPanelConteiner,
+  CalculatorContainer,
+  ControlPanelContainer,
   Line,
 } from './components'
 
@@ -35,15 +35,15 @@ class Calculator extends React.Component {
 
   render() {
     return (
-      <CalcukatorContainer>
-        <ControlPanelConteiner>
+      <CalculatorContainer>
+        <ControlPanelContainer>
           <Display expr={this.props.expr} />
           <Line horizontal />
           <Keypad handleClick={this.onHandleClick} />
-        </ControlPanelConteiner>
+        </ControlPanelContainer>
         <Line vertical />
         <Histrory history={this.props.history} />
-      </CalcukatorContainer>
+      </CalculatorContainer>
     )
   }
 }

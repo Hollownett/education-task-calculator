@@ -34,6 +34,10 @@ class Settigns extends React.Component {
     this.props.changeTheme(event.target.value)
   }
 
+  deleteAllHistory = () => {
+    this.props.clearHistory()
+  }
+
   render() {
     return (
       <PageLayout>
@@ -58,8 +62,7 @@ class Settigns extends React.Component {
                 ))}
               </ThemeSelector>
             </div>
-            <Button
-              onClick={() => this.props.clearHistory()}>
+            <Button onClick={this.deleteAllHistory}>
               CLEAR ALL HISTORY
             </Button>
           </SettignsContainer>
