@@ -6,9 +6,7 @@ export function setExpression(expression, action) {
     /[\d]*[-+*/.]$/.exec(expression) &&
     /[-+*/.]/.exec(action.payload.expr)
   ) {
-    console.log('b', expression)
     expression = expression.slice(0, expression.length - 1)
-    console.log('a', expression)
   }
 
   switch (action.type) {

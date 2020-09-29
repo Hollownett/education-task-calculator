@@ -33,7 +33,7 @@ const calculate = expr => async (dispatch, getState) => {
       },
     })
   } catch (error) {
-    console.log(error)
+
   }
 }
 
