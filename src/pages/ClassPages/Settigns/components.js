@@ -47,3 +47,6 @@ export const SettignsContainer = styled.div`
   margin-left: ${({ theme }) => theme.spaces[4]}px;
   margin-top: ${({ theme }) => theme.spaces[5]}px;
 `
+export const ThemeSelectorContainer = styled.div`
+  width: 250px;
+`
