@@ -62,7 +62,7 @@ class Settigns extends React.Component {
                         </ThemeSelectorContainer>
                         <Button onClick={this.deleteAllHistory}>
                             CLEAR ALL HISTORY
-            </Button>
+                        </Button>
                     </SettignsContainer>
                 </Card>
             </PageLayout>

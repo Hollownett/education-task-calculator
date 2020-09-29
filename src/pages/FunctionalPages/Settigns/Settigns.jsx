@@ -64,7 +64,7 @@ const Settigns = () => {
                     </ThemeSelectorContainer>
                     <Button onClick={deleteAllHistory}>
                         CLEAR ALL HISTORY
-          </Button>
+                    </Button>
                 </SettignsContainer>
             </Card>
         </PageLayout>

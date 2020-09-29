@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {
-  Display as CalucatorDispaly,
+  Display as DisplayExpression,
   DisplayContainer,
 } from './components'
 
@@ -9,9 +9,9 @@ class Display extends React.Component {
   render() {
     return (
       <DisplayContainer>
-        <CalucatorDispaly>
+        <DisplayExpression>
           {this.props.expr}
-        </CalucatorDispaly>
+        </DisplayExpression>
       </DisplayContainer>
     )
   }
