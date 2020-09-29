@@ -13,8 +13,8 @@ import {
 } from '@/constants/actions'
 
 const calculate = expr => async (dispatch, getState) => {
+  const answer = evaluate(expr)
   try {
-    const answer = evaluate(expr)
     if (expr.search(/[-+*/.]/) !== -1) {
       dispatch({
         type: ADD_TO_HISTORY,
@@ -33,71 +33,70 @@ const calculate = expr => async (dispatch, getState) => {
       },
     })
   } catch (error) {
-
-  }
-}
-
-const setExpression = key => async (dispatch, getState) => {
-  try {
-    const state = getState(state)
-    if (state.calculator.expr.length < 20) {
-      dispatch({
-        type: SET_EXPRESSION,
-        payload: {
-          expr: key,
-        },
-      })
-    }
-  } catch (error) {
     console.log(error)
   }
-}
 
-const clearExpression = () => {
-  return {
-    type: CLEAR,
-    payload: {
-      expr: '',
-    },
-  }
-}
-
-const clearElement = () => {
-  return {
-    type: CLEAR_ELEMENT,
-  }
-}
-
-const clearHistory = () => {
-  try {
-    sessionStorage.removeItem('history')
-    return {
-      type: CLEAR_HISTORY,
+  const setExpression = key => async (dispatch, getState) => {
+    try {
+      const state = getState(state)
+      if (state.calculator.expr.length < 20) {
+        dispatch({
+          type: SET_EXPRESSION,
+          payload: {
+            expr: key,
+          },
+        })
+      }
+    } catch (error) {
+      console.log(error)
     }
-  } catch (error) {
-    console.log(error)
   }
-}
 
-const changeTheme = selectedTheme => {
-  try {
-    sessionStorage.setItem('theme', selectedTheme)
+  const clearExpression = () => {
     return {
-      type: CHANGE_THEME,
+      type: CLEAR,
       payload: {
-        theme: selectedTheme,
+        expr: '',
       },
     }
-  } catch (error) {
-    console.log(error)
   }
-}
 
-export {
-  calculate,
-  setExpression,
-  clearExpression,
-  clearElement,
-  clearHistory,
-  changeTheme,
-}
+  const clearElement = () => {
+    return {
+      type: CLEAR_ELEMENT,
+    }
+  }
+
+  const clearHistory = () => {
+    try {
+      sessionStorage.removeItem('history')
+      return {
+        type: CLEAR_HISTORY,
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const changeTheme = selectedTheme => {
+    try {
+      sessionStorage.setItem('theme', selectedTheme)
+      return {
+        type: CHANGE_THEME,
+        payload: {
+          theme: selectedTheme,
+        },
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  export {
+    calculate,
+    setExpression,
+    clearExpression,
+    clearElement,
+    clearHistory,
+    changeTheme,
+  }
